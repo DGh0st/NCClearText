@@ -1,0 +1,9 @@
+Package: com.dgh0st.nccleartext
+Name: NCClearText
+Depends: mobilesubstrate
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Sets the Notification Center "clear" text to custom text
+Maintainer: DGh0st
+Author: DGh0st
+Section: Tweaks
