@@ -1,19 +1,7 @@
-//#import <Preferences/Preferences.h>
-
-@interface PSViewController : UIViewController
-@end
-
-@interface PSListController : PSViewController {
-
-	id _specifiers;
-}
--(id)specifiers;
--(id)loadSpecifiersFromPlistName:(id)name target:(id)target;
-@end
+#import <Preferences/Preferences.h>
 
 @interface nccleartextListController: PSListController {
 }
--(void)save;
 @end
 
 @implementation nccleartextListController
@@ -52,8 +40,8 @@
 	self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
 	if (self) {
 
-		CGRect frame = CGRectMake(0, 5, [[UIScreen mainScreen] bounds].size.width, 60);
-		CGRect underFrame = CGRectMake(0, 52, [[UIScreen mainScreen] bounds].size.width, 60);
+		CGRect frame = CGRectMake(0, 2, [[UIScreen mainScreen] bounds].size.width, 60);
+		CGRect underFrame = CGRectMake(0, 35, [[UIScreen mainScreen] bounds].size.width, 60);
  
 		label = [[UILabel alloc] initWithFrame:frame];
 		[label setNumberOfLines:1];
