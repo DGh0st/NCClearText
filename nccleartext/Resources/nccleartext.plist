@@ -22,7 +22,7 @@
 		<dict>
 			<key>cell</key>			<string>PSGroupCell</string>
 			<key>label</key>		<string>Notification Center clear button text</string>
-			<key>footerText</key>	<stringKnown Bug: settings the text to something shorter than previous will not resize the background image. An easy fix for this is respring. :)</string>
+			<key>footerText</key>	<string>Known Bug: settings the text to something shorter than previous will not resize the background image. An easy fix for this is respring. :)</string>
 		</dict>
 		<dict>
 			<key>cell</key>			<string>PSEditTextCell</string>
@@ -35,6 +35,19 @@
 			<key>cell</key>             <string>PSButtonCell</string>
             <key>label</key>            <string>Save</string>
             <key>action</key>           <string>save</string>
+		</dict>
+		<dict>
+			<key>cell</key>			<string>PSGroupCell</string>
+			<key>label</key>		<string>Notification Center clear button text</string>
+			<key>footerText</key>	<string>Enable to force clear state by default.</string>
+		</dict>
+		<dict>
+			<key>cell</key>			<string>PSSwitchCell</string>
+			<key>default</key>		<true/>
+			<key>defaults</key>		<string>com.dgh0st.nccleartext</string>
+			<key>key</key>			<string>isClearEnabled</string>
+			<key>label</key>		<string>Clear State</string>
+			<key>PostNotification</key>			<string>com.dgh0st.nccleartext/settingschanged</string>
 		</dict>
 		<dict>
 			<key>cell</key>			<string>PSGroupCell</string>
