@@ -7,6 +7,8 @@
 #define dIsClearEnabled [[[NSDictionary dictionaryWithContentsOfFile:dSettingsPath] objectForKey:@"isClearEnabled"] boolValue]
 #define dCustomText [[NSDictionary dictionaryWithContentsOfFile:dSettingsPath] objectForKey:@"customText"]
 
+NSMutableDictionary *prefs = nil;
+
 %hook SBNotificationsClearButton
 - (id)initWithTitle:(id)arg1 graphicsQuality:(NSInteger)arg2{
 	if(dIsEnabled){
@@ -32,7 +34,7 @@
 %end
 
 void loadPreferences() {
-	NSMutableDictionary *prefs = [NSMutableDictionary dictionaryWithContentsOfFile:dSettingsPath];
+	prefs = [NSMutableDictionary dictionaryWithContentsOfFile:dSettingsPath];
 
 	NSLog(@"%@", [prefs description]);
 }
