@@ -23,7 +23,7 @@
 -(CGFloat)preferredHeightForWidth:(CGFloat)arg1;
 @end
 
-@interface PSTableCell : UITableView
+@interface PSTableCell (NCClearText)
 -(id)initWithStyle:(int)style reuseIdentifier:(id)arg2;
 @end
 

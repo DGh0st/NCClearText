@@ -1,13 +1,7 @@
-@interface SBNotificationsClearButton:UIControl
-- (id)initWithTitle:(id)arg1 graphicsQuality:(NSInteger)arg2;
-@end
-
 #define dSettingsPath [NSHomeDirectory() stringByAppendingPathComponent:@"/Library/Preferences/com.dgh0st.nccleartext.plist"]
 #define dIsEnabled [[[NSDictionary dictionaryWithContentsOfFile:dSettingsPath] objectForKey:@"isEnabled"] boolValue]
 #define dIsClearEnabled [[[NSDictionary dictionaryWithContentsOfFile:dSettingsPath] objectForKey:@"isClearEnabled"] boolValue]
 #define dCustomText [[NSDictionary dictionaryWithContentsOfFile:dSettingsPath] objectForKey:@"customText"]
-
-NSMutableDictionary *prefs = nil;
 
 %hook SBNotificationsClearButton
 - (id)initWithTitle:(id)arg1 graphicsQuality:(NSInteger)arg2{
@@ -23,7 +17,7 @@ NSMutableDictionary *prefs = nil;
 -(void)setState:(NSInteger)arg1 animated:(BOOL)arg2 {
 	if(dIsEnabled){
 		if(dIsClearEnabled){
-			%orig(1, arg2);
+			%orig(1, YES);
 		} else {
 			%orig(arg1, arg2);
 		}
@@ -34,7 +28,7 @@ NSMutableDictionary *prefs = nil;
 %end
 
 void loadPreferences() {
-	prefs = [NSMutableDictionary dictionaryWithContentsOfFile:dSettingsPath];
+	NSMutableDictionary *prefs = [NSMutableDictionary dictionaryWithContentsOfFile:dSettingsPath];
 
 	NSLog(@"%@", [prefs description]);
 }
