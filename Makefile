@@ -1,7 +1,7 @@
-export ARCHS = armv7 arm64
-export TARGET = iphone:clang:8.1:7.0
+export ARCHS = arm64 armv7
+export TARGET = iphone:clang:8.1:7.1
 
-PACKAGE_VERSION = 1.1
+PACKAGE_VERSION = 1.2
 
 include theos/makefiles/common.mk
 
