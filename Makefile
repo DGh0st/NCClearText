@@ -1,9 +1,9 @@
 export ARCHS = arm64 armv7
 export TARGET = iphone:clang:8.1:7.1
 
-PACKAGE_VERSION = 1.2
+PACKAGE_VERSION = 1.2.1
 
-include theos/makefiles/common.mk
+include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = NCClearText
 NCClearText_FILES = Tweak.xm

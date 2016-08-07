@@ -30,6 +30,9 @@
 		%orig(arg1, arg2);
 	}
 }
+-(NSInteger)clearButtonState {
+	return (dIsEnabled && dIsClearEnabled) ? 1 : %orig;
+}
 %end
 
 %hook SBNotificationsViewController
@@ -49,7 +52,7 @@
 void loadPreferences() {
 	NSMutableDictionary *prefs = [NSMutableDictionary dictionaryWithContentsOfFile:dSettingsPath];
 
-	NSLog(@"%@", [prefs description]);
+	NSLog(@"NCClearText prefs = %@", prefs);
 }
 
 %ctor {
