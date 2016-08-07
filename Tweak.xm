@@ -22,7 +22,7 @@
 -(void)setState:(NSInteger)arg1 animated:(BOOL)arg2 {
 	if(dIsEnabled){
 		if(dIsClearEnabled){
-			%orig(1, YES);
+			%orig(1, NO);
 		} else {
 			%orig(arg1, arg2);
 		}
